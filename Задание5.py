@@ -49,25 +49,25 @@ pop_curr = ['EUR', 'USD', 'RUB', 'CNY']
 
 root = Tk()
 root.title("Курс валют")
-root.geometry("300x200")
+root.geometry("350x280")
 
-Label(text='Базовая валюта').pack(pady=10, padx=10)
+Label(text='Базовая валюта').pack(pady=5, padx=10, anchor='w')
 base_combobox = ttk.Combobox(values=list(currencies.keys()))
-base_combobox.pack()
+base_combobox.pack(padx=10, fill='x')
 
-Label(text='Вторая базовая валюта').pack(pady=10, padx=10)
+Label(text='Вторая базовая валюта').pack(pady=5, padx=10, anchor='w')
 base2_combobox = ttk.Combobox(values=list(currencies.keys()))
-base2_combobox.pack()
+base2_combobox.pack(padx=10, fill='x')
 
-Label(text='Целевая валюта').pack(pady=10, padx=10)
+Label(text='Целевая валюта').pack(pady=5, padx=10, anchor='w')
 target_combobox = ttk.Combobox(values=list(currencies))
-target_combobox.pack()
+target_combobox.pack(padx=10, fill='x')
 
 currency_label = ttk.Label()
 currency_label.pack(pady=10, padx=10)
 
 button = Button(text='Получить курс', command=exchange)
-button.pack()
+button.pack(pady=10)
 
 target_combobox.bind("<<ComboboxSelected>>", update_currency_label)
 root.mainloop()
