@@ -189,6 +189,6 @@ if __name__ == "__main__":
     app = CryptoRatesApp(root)
 
     # Автоматически загружаем данные при запуске
-    # root.after(100, app.refresh)
+    root.after(100, app.refresh)
 
     root.mainloop()
